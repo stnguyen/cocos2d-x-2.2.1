@@ -1,18 +1,18 @@
 /****************************************************************************
  Copyright (c) 2013 cocos2d-x.org
- 
+
  http://www.cocos2d-x.org
- 
+
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
  in the Software without restriction, including without limitation the rights
  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  copies of the Software, and to permit persons to whom the Software is
  furnished to do so, subject to the following conditions:
- 
+
  The above copyright notice and this permission notice shall be included in
  all copies or substantial portions of the Software.
- 
+
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -40,7 +40,7 @@ public:
     float top;
     float right;
     float bottom;
-    
+
 public:
     UIMargin();
     UIMargin(float l, float t, float r, float b);
@@ -50,7 +50,7 @@ public:
     bool equals(const UIMargin& target) const;
 };
 
-extern const UIMargin UIMarginZero;
+const UIMargin UIMarginZero = UIMargin();
 
 typedef enum
 {
@@ -75,7 +75,7 @@ typedef enum
     RELATIVE_ALIGN_PARENT_LEFT_BOTTOM,
     RELATIVE_ALIGN_PARENT_BOTTOM_CENTER_HORIZONTAL,
     RELATIVE_ALIGN_PARENT_RIGHT_BOTTOM,
-    
+
     RELATIVE_LOCATION_ABOVE_LEFTALIGN,
     RELATIVE_LOCATION_ABOVE_CENTER,
     RELATIVE_LOCATION_ABOVE_RIGHTALIGN,
