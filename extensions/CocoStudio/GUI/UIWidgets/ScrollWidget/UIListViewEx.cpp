@@ -1,18 +1,18 @@
 /****************************************************************************
  Copyright (c) 2013 cocos2d-x.org
- 
+
  http://www.cocos2d-x.org
- 
+
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
  in the Software without restriction, including without limitation the rights
  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  copies of the Software, and to permit persons to whom the Software is
  furnished to do so, subject to the following conditions:
- 
+
  The above copyright notice and this permission notice shall be included in
  all copies or substantial portions of the Software.
- 
+
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -27,7 +27,7 @@
 #include "../../../../GUI/CCControlExtension/CCScale9Sprite.h"
 
 NS_CC_EXT_BEGIN
-
+const UIMargin UIMarginZero = UIMargin();
 UIListViewEx::UIListViewEx():
 m_pModel(NULL),
 m_pItems(NULL),
@@ -37,7 +37,7 @@ _listViewEventListener(NULL),
 _listViewEventSelector(NULL),
 _curSelectedIndex(0)
 {
-    
+
 }
 
 UIListViewEx::~UIListViewEx()
@@ -233,7 +233,7 @@ void UIListViewEx::remedyLayoutParameter(UIWidget *item)
         default:
             break;
     }
-    
+
 }
 
 void UIListViewEx::pushBackDefaultItem()
@@ -288,7 +288,7 @@ void UIListViewEx::removeItem(int index)
     if (!item)
     {
         return;
-    
+
     }
     m_pItems->removeObject(item);
     removeChild(item);
@@ -363,7 +363,7 @@ void UIListViewEx::setDirection(SCROLLVIEW_DIR dir)
             break;
     }
     UIScrollView::setDirection(dir);
-    
+
 }
 
 void UIListViewEx::addEventListenerListViewEx(cocos2d::CCObject *target, SEL_ListViewExEvent selector)
