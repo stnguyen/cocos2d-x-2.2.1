@@ -187,10 +187,11 @@ int CCLuaStack::executeString(const char *codes)
 int CCLuaStack::executeScriptFile(const char* filename)
 {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_ANDROID)
-    std::string code("require \"");
-    code.append(filename);
-    code.append("\"");
-    return executeString(code.c_str());
+    std::string code(std::string("package.loaded[\"") + std::string(filename) + std::string("\"] = nil\n")); //this line was added by me
+	code.append("require \"");
+	code.append(filename);
+	code.append("\"");
+	return executeString(code.c_str());
 #else
     std::string fullPath = CCFileUtils::sharedFileUtils()->fullPathForFilename(filename);
     ++m_callFromLua;
@@ -278,7 +279,7 @@ void CCLuaStack::pushCCLuaValue(const CCLuaValue& value)
     }
     else if (type == CCLuaValueTypeString)
     {
-        return pushString(value.stringValue().c_str());
+        pushString(value.stringValue().c_str());
     }
     else if (type == CCLuaValueTypeDict)
     {
